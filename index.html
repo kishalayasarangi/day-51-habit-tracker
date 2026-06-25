@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="app-title">🎯 Habit Tracker</h1>
+    <p class="subtitle">Build streaks · Track progress · Day 51 of 120</p>
+
+    <!-- TODAY BANNER -->
+    <div class="today-banner">
+      <div class="today-date" id="todayDate"></div>
+      <div class="today-stats">
+        <span id="completedToday">0</span> of
+        <span id="totalHabits">0</span> habits done today
+      </div>
+      <div class="today-progress-wrap">
+        <div class="today-progress" id="todayProgress"></div>
+      </div>
+    </div>
+
+    <!-- ADD HABIT -->
+    <div class="add-card">
+      <h3>Add New Habit</h3>
+      <div class="add-row">
+        <input type="text" id="habitName"
+               placeholder="e.g. Exercise, Read, Code..."
+               onkeydown="if(event.key==='Enter') addHabit()"/>
+        <select id="habitIcon">
+          <option value="💪">💪 Exercise</option>
+          <option value="📚">📚 Read</option>
+          <option value="💻">💻 Code</option>
+          <option value="🧘">🧘 Meditate</option>
+          <option value="💧">💧 Drink Water</option>
+          <option value="🏃">🏃 Run</option>
+          <option value="✍️">✍️ Journal</option>
+          <option value="🎯">🎯 Practice</option>
+          <option value="😴">😴 Sleep Early</option>
+          <option value="🥗">🥗 Eat Healthy</option>
+        </select>
+        <button onclick="addHabit()">+ Add</button>
+      </div>
+    </div>
+
+    <!-- HABITS LIST -->
+    <div class="habits-list" id="habitsList"></div>
+
+    <!-- HEATMAP -->
+    <div class="heatmap-card" id="heatmapCard">
+      <h3>Activity Heatmap (Last 12 Weeks)</h3>
+      <div class="heatmap-wrap">
+        <div class="heatmap" id="heatmap"></div>
+      </div>
+      <div class="heatmap-legend">
+        <span>Less</span>
+        <div class="legend-boxes">
+          <div class="legend-box l0"></div>
+          <div class="legend-box l1"></div>
+          <div class="legend-box l2"></div>
+          <div class="legend-box l3"></div>
+          <div class="legend-box l4"></div>
+        </div>
+        <span>More</span>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-grid" id="statsGrid"></div>
+
+  </div>
+
+  <footer>Day 51 of 120 · Kishalaya Sarangi · NIT Rourkela</footer>
+  <script src="script.js"></script>
+</body>
+</html>
